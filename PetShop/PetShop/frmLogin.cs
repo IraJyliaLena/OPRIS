@@ -37,7 +37,7 @@ namespace PetShop
                 else
                 {
                     string connectionString = "user id=" + txtUserName.Text + "; password=" + txtPassword.Text + ";";
-                    myConnection = new SqlConnection(sql_constString + connectionString);
+                    myConnection = new SqlConnection(sql_constString+connectionString);
                     try
                     {
                         myConnection.Open();
@@ -45,9 +45,10 @@ namespace PetShop
                         this.Hide();
                         main.Show(this);
                     }
-                    catch (SqlException)
+                    catch (SqlException ex)
                     {
-                        MessageBox.Show("Неверное имя пользователя\nили пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show(ex.Message);
+                        //MessageBox.Show("Неверное имя пользователя\nили пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         txtPassword.Select(0, txtPassword.TextLength);
                         txtPassword.Focus();
                     }
@@ -64,6 +65,11 @@ namespace PetShop
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void butSelect_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
