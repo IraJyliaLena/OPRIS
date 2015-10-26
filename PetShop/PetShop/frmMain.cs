@@ -88,5 +88,11 @@ namespace PetShop
             myConnection.Dispose();
             this.Owner.Show();
         }
+
+        private void новыйЗапросToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
 }

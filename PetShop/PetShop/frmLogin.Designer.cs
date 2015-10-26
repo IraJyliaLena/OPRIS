@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
-            this.butSelect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -91,22 +90,11 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // butSelect
-            // 
-            this.butSelect.Location = new System.Drawing.Point(33, 108);
-            this.butSelect.Name = "butSelect";
-            this.butSelect.Size = new System.Drawing.Size(231, 23);
-            this.butSelect.TabIndex = 10;
-            this.butSelect.Text = "Запрос";
-            this.butSelect.UseVisualStyleBackColor = true;
-            this.butSelect.Click += new System.EventHandler(this.butSelect_Click);
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 143);
-            this.Controls.Add(this.butSelect);
+            this.ClientSize = new System.Drawing.Size(301, 98);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label2);
@@ -130,7 +118,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button butSelect;
     }
 }
 

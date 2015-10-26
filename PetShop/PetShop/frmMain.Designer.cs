@@ -104,6 +104,7 @@
             this.новыйЗапросToolStripMenuItem1.Name = "новыйЗапросToolStripMenuItem1";
             this.новыйЗапросToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.новыйЗапросToolStripMenuItem1.Text = "Новый запрос";
+            this.новыйЗапросToolStripMenuItem1.Click += new System.EventHandler(this.новыйЗапросToolStripMenuItem1_Click);
             // 
             // новыйЗапросToolStripMenuItem
             // 
