@@ -1,0 +1,11 @@
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\bin\Debug\PetShop.exe.config
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\bin\Debug\PetShop.exe
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\bin\Debug\PetShop.pdb
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.csprojResolveAssemblyReference.cache
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmLogin.resources
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmMain.resources
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.Cache
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.exe
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.pdb
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmSelect.resources

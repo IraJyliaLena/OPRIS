@@ -91,8 +91,9 @@ namespace PetShop
 
         private void новыйЗапросToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            frmSelect sel = new frmSelect(myConnection);
             this.Hide();
-
+            sel.Show(this);
         }
     }
 }

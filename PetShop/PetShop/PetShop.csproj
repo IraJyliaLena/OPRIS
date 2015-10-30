@@ -62,11 +62,6 @@
     <Compile Include="frmSelect.Designer.cs">
       <DependentUpon>frmSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="PetShopODataSet_Var1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PetShopODataSet_Var1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmLogin.resx">
@@ -87,17 +82,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="PetShopODataSet_Var1.xsc">
-      <DependentUpon>PetShopODataSet_Var1.xsd</DependentUpon>
-    </None>
-    <None Include="PetShopODataSet_Var1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PetShopODataSet_Var1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PetShopODataSet_Var1.xss">
-      <DependentUpon>PetShopODataSet_Var1.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
