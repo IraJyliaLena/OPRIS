@@ -51,17 +51,18 @@
             // 
             // btOk
             // 
-            this.btOk.Location = new System.Drawing.Point(421, 105);
+            this.btOk.Location = new System.Drawing.Point(503, 108);
             this.btOk.Name = "btOk";
             this.btOk.Size = new System.Drawing.Size(128, 27);
             this.btOk.TabIndex = 35;
             this.btOk.Text = "Применить";
             this.btOk.UseVisualStyleBackColor = true;
+            this.btOk.Click += new System.EventHandler(this.btOk_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(418, 8);
+            this.label3.Location = new System.Drawing.Point(490, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 34;
@@ -70,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(281, 56);
+            this.label2.Location = new System.Drawing.Point(303, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 32;
@@ -78,9 +79,9 @@
             // 
             // tbZnach
             // 
-            this.tbZnach.Location = new System.Drawing.Point(281, 72);
+            this.tbZnach.Location = new System.Drawing.Point(306, 72);
             this.tbZnach.Name = "tbZnach";
-            this.tbZnach.Size = new System.Drawing.Size(121, 20);
+            this.tbZnach.Size = new System.Drawing.Size(147, 20);
             this.tbZnach.TabIndex = 31;
             // 
             // btOr
@@ -176,7 +177,7 @@
             // 
             // btClear
             // 
-            this.btClear.Location = new System.Drawing.Point(576, 105);
+            this.btClear.Location = new System.Drawing.Point(648, 108);
             this.btClear.Name = "btClear";
             this.btClear.Size = new System.Drawing.Size(128, 27);
             this.btClear.TabIndex = 22;
@@ -186,15 +187,17 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 172);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 172);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(648, 190);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 190);
             this.dataGridView1.TabIndex = 21;
             // 
             // btShop
             // 
-            this.btShop.Location = new System.Drawing.Point(478, 368);
+            this.btShop.Location = new System.Drawing.Point(606, 368);
             this.btShop.Name = "btShop";
             this.btShop.Size = new System.Drawing.Size(206, 27);
             this.btShop.TabIndex = 36;
@@ -213,7 +216,8 @@
             // 
             // rtbSelect
             // 
-            this.rtbSelect.Location = new System.Drawing.Point(421, 24);
+            this.rtbSelect.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rtbSelect.Location = new System.Drawing.Point(493, 24);
             this.rtbSelect.Name = "rtbSelect";
             this.rtbSelect.ReadOnly = true;
             this.rtbSelect.Size = new System.Drawing.Size(283, 75);
@@ -222,7 +226,7 @@
             // 
             // btnAddZnach
             // 
-            this.btnAddZnach.Location = new System.Drawing.Point(332, 98);
+            this.btnAddZnach.Location = new System.Drawing.Point(383, 98);
             this.btnAddZnach.Name = "btnAddZnach";
             this.btnAddZnach.Size = new System.Drawing.Size(70, 26);
             this.btnAddZnach.TabIndex = 39;
@@ -234,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 407);
+            this.ClientSize = new System.Drawing.Size(824, 407);
             this.Controls.Add(this.btnAddZnach);
             this.Controls.Add(this.rtbSelect);
             this.Controls.Add(this.btAddField);
