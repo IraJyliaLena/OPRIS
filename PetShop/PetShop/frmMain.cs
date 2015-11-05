@@ -14,19 +14,23 @@ namespace PetShop
     public partial class frmMain : Form
     {
         private SqlConnection myConnection;
-        public frmMain(SqlConnection con)
+        public frmMain(SqlConnection con, String user_name)
         {
             InitializeComponent();
             myConnection = con;
-            getPrivileges();
+            this.Text += " (" + user_name + ")";
+            getPrivileges(user_name);
             fillTheTable(dgvPets, "DISPLAY_PETS");
         }
 
-        private void getPrivileges()
+        private void getPrivileges(String user)
         {
             string commandText = "GET_ROLE_NAME";
             SqlCommand myCommand = new SqlCommand(commandText, myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
+            SqlParameter n = new SqlParameter("@name", SqlDbType.NVarChar, 50);
+            n.Value = user;
+            myCommand.Parameters.Add(n);
             SqlParameter p = new SqlParameter("@role", SqlDbType.NVarChar, 50);
             p.Direction = ParameterDirection.Output;
             myCommand.Parameters.Add(p);
@@ -35,7 +39,19 @@ namespace PetShop
                 myCommand.ExecuteNonQuery();
             }
             catch
-            { p.Value = "sa"; }
+            { /*что-то тут надо написать*/ }
+            switch (p.Value.ToString())
+            {
+                case "директор":
+                    break;
+                case "СОП":
+                    break;
+                case "продавец":
+                    break;
+                default:
+                    break;
+
+            }
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)

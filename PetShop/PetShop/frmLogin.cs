@@ -41,7 +41,7 @@ namespace PetShop
                     try
                     {
                         myConnection.Open();
-                        frmMain main = new frmMain(myConnection);
+                        frmMain main = new frmMain(myConnection, txtUserName.Text);
                         this.Hide();
                         main.Show(this);
                     }
