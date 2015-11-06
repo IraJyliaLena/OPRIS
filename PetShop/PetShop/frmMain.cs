@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Common;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace PetShop
 {
@@ -94,6 +96,13 @@ namespace PetShop
             frmSelect sel = new frmSelect(myConnection);
             this.Hide();
             sel.Show(this);
+        }
+
+        private void поставщикиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProviders prov = new frmProviders(myConnection);
+            this.Hide();
+            prov.Show(this);
         }
     }
 }

@@ -155,5 +155,24 @@ namespace PetShop
             dataGridView1.DataSource = bindingSource;
             GetData(selectBase);
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void moreEqual_Click(object sender, EventArgs e)
+        {
+            select = select + " >= ";
+            selectBase = selectBase + " >= ";
+            rtbSelect.Text = select;
+        }
+
+        private void lessEqual_Click(object sender, EventArgs e)
+        {
+            select = select + " <= ";
+            selectBase = selectBase + " <= ";
+            rtbSelect.Text = select;
+        }
     }
 }

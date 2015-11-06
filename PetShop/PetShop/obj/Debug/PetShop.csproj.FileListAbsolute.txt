@@ -9,3 +9,7 @@ C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.csproj.Gener
 C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.exe
 C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.pdb
 C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmSelect.resources
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmProviders.resources
+C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmProvidersACD.resources

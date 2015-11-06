@@ -139,25 +139,26 @@
             // сотрудникиToolStripMenuItem
             // 
             this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
-            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
             // 
             // поставщикиToolStripMenuItem
             // 
             this.поставщикиToolStripMenuItem.Name = "поставщикиToolStripMenuItem";
-            this.поставщикиToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.поставщикиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.поставщикиToolStripMenuItem.Text = "Поставщики";
+            this.поставщикиToolStripMenuItem.Click += new System.EventHandler(this.поставщикиToolStripMenuItem_Click);
             // 
             // добавитьПородуToolStripMenuItem
             // 
             this.добавитьПородуToolStripMenuItem.Name = "добавитьПородуToolStripMenuItem";
-            this.добавитьПородуToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.добавитьПородуToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.добавитьПородуToolStripMenuItem.Text = "Породы";
             // 
             // животныеToolStripMenuItem
             // 
             this.животныеToolStripMenuItem.Name = "животныеToolStripMenuItem";
-            this.животныеToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.животныеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.животныеToolStripMenuItem.Text = "Животные";
             // 
             // работаСТаблицамиToolStripMenuItem

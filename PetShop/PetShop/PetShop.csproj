@@ -32,8 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +60,18 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProviders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProviders.Designer.cs">
+      <DependentUpon>frmProviders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProvidersACD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProvidersACD.Designer.cs">
+      <DependentUpon>frmProvidersACD.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +85,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProviders.resx">
+      <DependentUpon>frmProviders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProvidersACD.resx">
+      <DependentUpon>frmProvidersACD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelect.resx">
       <DependentUpon>frmSelect.cs</DependentUpon>

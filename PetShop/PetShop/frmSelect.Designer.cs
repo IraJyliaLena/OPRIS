@@ -46,6 +46,8 @@
             this.btAddField = new System.Windows.Forms.Button();
             this.rtbSelect = new System.Windows.Forms.RichTextBox();
             this.btnAddZnach = new System.Windows.Forms.Button();
+            this.moreEqual = new System.Windows.Forms.Button();
+            this.lessEqual = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,15 +191,16 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 172);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 205);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 190);
             this.dataGridView1.TabIndex = 21;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btShop
             // 
-            this.btShop.Location = new System.Drawing.Point(606, 368);
+            this.btShop.Location = new System.Drawing.Point(606, 401);
             this.btShop.Name = "btShop";
             this.btShop.Size = new System.Drawing.Size(206, 27);
             this.btShop.TabIndex = 36;
@@ -234,11 +237,35 @@
             this.btnAddZnach.UseVisualStyleBackColor = true;
             this.btnAddZnach.Click += new System.EventHandler(this.btnAddZnach_Click);
             // 
+            // moreEqual
+            // 
+            this.moreEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.moreEqual.Location = new System.Drawing.Point(183, 144);
+            this.moreEqual.Name = "moreEqual";
+            this.moreEqual.Size = new System.Drawing.Size(43, 34);
+            this.moreEqual.TabIndex = 40;
+            this.moreEqual.Text = ">=";
+            this.moreEqual.UseVisualStyleBackColor = true;
+            this.moreEqual.Click += new System.EventHandler(this.moreEqual_Click);
+            // 
+            // lessEqual
+            // 
+            this.lessEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lessEqual.Location = new System.Drawing.Point(232, 144);
+            this.lessEqual.Name = "lessEqual";
+            this.lessEqual.Size = new System.Drawing.Size(43, 34);
+            this.lessEqual.TabIndex = 41;
+            this.lessEqual.Text = "<=";
+            this.lessEqual.UseVisualStyleBackColor = true;
+            this.lessEqual.Click += new System.EventHandler(this.lessEqual_Click);
+            // 
             // frmSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 407);
+            this.ClientSize = new System.Drawing.Size(824, 440);
+            this.Controls.Add(this.lessEqual);
+            this.Controls.Add(this.moreEqual);
             this.Controls.Add(this.btnAddZnach);
             this.Controls.Add(this.rtbSelect);
             this.Controls.Add(this.btAddField);
@@ -287,5 +314,7 @@
         private System.Windows.Forms.Button btAddField;
         private System.Windows.Forms.RichTextBox rtbSelect;
         private System.Windows.Forms.Button btnAddZnach;
+        private System.Windows.Forms.Button moreEqual;
+        private System.Windows.Forms.Button lessEqual;
     }
 }
