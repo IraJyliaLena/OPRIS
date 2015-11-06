@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокПользователейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.построитьДеревоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйЗапросToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйЗапросToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,34 +60,6 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.SuspendLayout();
-            // 
-            // удалитьToolStripMenuItem
-            // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
-            // 
-            // списокПользователейToolStripMenuItem
-            // 
-            this.списокПользователейToolStripMenuItem.Name = "списокПользователейToolStripMenuItem";
-            this.списокПользователейToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.списокПользователейToolStripMenuItem.Text = "Список пользователей";
-            // 
-            // создатьToolStripMenuItem
-            // 
-            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.создатьToolStripMenuItem.Text = "Создать...";
-            // 
-            // пользователиToolStripMenuItem
-            // 
-            this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.создатьToolStripMenuItem,
-            this.списокПользователейToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
-            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.пользователиToolStripMenuItem.Text = "Пользователи";
             // 
             // построитьДеревоToolStripMenuItem
             // 
@@ -207,8 +175,7 @@
             this.менюToolStripMenuItem,
             this.работаСТаблицамиToolStripMenuItem,
             this.продатьЖивотноеToolStripMenuItem,
-            this.новыйЗапросToolStripMenuItem,
-            this.пользователиToolStripMenuItem});
+            this.новыйЗапросToolStripMenuItem});
             this.myMenu.Location = new System.Drawing.Point(0, 0);
             this.myMenu.Name = "myMenu";
             this.myMenu.Size = new System.Drawing.Size(648, 24);
@@ -313,10 +280,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem списокПользователейToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem построитьДеревоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem новыйЗапросToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem новыйЗапросToolStripMenuItem;
