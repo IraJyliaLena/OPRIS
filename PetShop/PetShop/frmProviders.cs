@@ -46,9 +46,7 @@ namespace PetShop
         private void butAdd_Click(object sender, EventArgs e)
         {
             frmProvidersACD prov1 = new frmProvidersACD(myConnection, "add", dgvProviders);
-            prov1.Show(this);
-            MessageBox.Show("тута");
-            fillTheTable(dgvProviders, "DISPLAY_PROVIDER");
+            prov1.Show(this); 
         }
 
         private void butChange_Click(object sender, EventArgs e)
