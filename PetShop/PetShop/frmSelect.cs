@@ -18,8 +18,8 @@ namespace PetShop
         BindingSource bindingSource;
         DataTable table;
         string select = "";
-        string selectBase = "select distinct pet_id as '№', pet_name as 'Кличка', pet_sex as 'Пол', pet_birthday as 'Дата рождения', breed_name as 'Порода', species_name as 'Вид', provider_name as 'Поставщик', pet_price as 'Цена' from Pets, Breeds, Species, Providers where Breeds.breed_id = Pets.breed_id and Species.species_id = Breeds.species_id and Providers.provider_id = Breeds.provider_id and ";
-        string selectBaseZapas = "select pet_id as '№', pet_name as 'Кличка', pet_sex as 'Пол', pet_birthday as 'Дата рождения', breed_name as 'Порода', species_name as 'Вид', provider_name as 'Поставщик', pet_price as 'Цена' from Pets, Breeds, Species, Providers where Breeds.breed_id = Pets.breed_id and Species.species_id = Breeds.species_id and Providers.provider_id = Breeds.provider_id and ";
+        string selectBase = "select distinct pet_id as '№', pet_name as 'Кличка', pet_sex as 'Пол', pet_birthday as 'Дата рождения', breed_name as 'Порода', species_name as 'Вид', provider_name as 'Поставщик', pet_price as 'Цена' from Pets, Breeds, Species, Providers where Breeds.breed_id = Pets.breed_id and Species.species_id = Breeds.species_id and Providers.provider_id = Breeds.provider_id and";
+        string selectBaseZapas = "select pet_id as '№', pet_name as 'Кличка', pet_sex as 'Пол', pet_birthday as 'Дата рождения', breed_name as 'Порода', species_name as 'Вид', provider_name as 'Поставщик', pet_price as 'Цена' from Pets, Breeds, Species, Providers where Breeds.breed_id = Pets.breed_id and Species.species_id = Breeds.species_id and Providers.provider_id = Breeds.provider_id and";
         string type = "";
         private SqlConnection myConnection;
         public frmSelect(SqlConnection con)
@@ -70,43 +70,43 @@ namespace PetShop
 
         private void btEqual_Click(object sender, EventArgs e)
         {
-            select = select + " = ";
-            selectBase = selectBase + " = ";
+            select = select + " =";
+            selectBase = selectBase + " =";
             rtbSelect.Text = select;
         }
 
         private void btOr_Click(object sender, EventArgs e)
         {
-            select = select + " OR ";
-            selectBase = selectBase + " OR ";
+            select = select + " OR";
+            selectBase = selectBase + " OR";
             rtbSelect.Text = select;
         }
 
         private void btMore_Click(object sender, EventArgs e)
         {
-            select = select + " > ";
-            selectBase = selectBase + " > ";
+            select = select + " >";
+            selectBase = selectBase + " >";
             rtbSelect.Text = select;
         }
 
         private void btAnd_Click(object sender, EventArgs e)
         {
-            select = select + " AND ";
-            selectBase = selectBase + " AND ";
+            select = select + " AND";
+            selectBase = selectBase + " AND";
             rtbSelect.Text = select;
         }
 
         private void btLess_Click(object sender, EventArgs e)
         {
-            select = select + " < ";
-            selectBase = selectBase + " < ";
+            select = select + " <";
+            selectBase = selectBase + " <";
             rtbSelect.Text = select;
         }
 
         private void btNot_Click(object sender, EventArgs e)
         {
-            select = select + " NOT ";
-            selectBase = selectBase + " NOT ";
+            select = select + " NOT";
+            selectBase = selectBase + " NOT";
             rtbSelect.Text = select;
         }
 
@@ -118,8 +118,8 @@ namespace PetShop
         private void btnAddZnach_Click(object sender, EventArgs e)
         {
             if (type == "string")
-                selectBase = selectBase + " '" + tbZnach.Text.ToString() + "' ";
-            else selectBase = selectBase + " " + Convert.ToInt32(tbZnach.Text) + " ";
+                selectBase = selectBase + " '" + tbZnach.Text.ToString() + "'";
+            else selectBase = selectBase + " " + Convert.ToInt32(tbZnach.Text);
             select = select + tbZnach.Text.ToString();
             rtbSelect.Text = select;
             tbZnach.Clear();
@@ -163,15 +163,25 @@ namespace PetShop
 
         private void moreEqual_Click(object sender, EventArgs e)
         {
-            select = select + " >= ";
-            selectBase = selectBase + " >= ";
+            select = select + " >=";
+            selectBase = selectBase + " >=";
             rtbSelect.Text = select;
         }
 
         private void lessEqual_Click(object sender, EventArgs e)
         {
-            select = select + " <= ";
-            selectBase = selectBase + " <= ";
+            select = select + " <=";
+            selectBase = selectBase + " <=";
+            rtbSelect.Text = select;
+        }
+
+        private void butCansel_Click(object sender, EventArgs e)
+        {
+            int lengthStr = selectBase.Length;
+            int posProb = selectBase.LastIndexOf(' ');
+            int k = lengthStr - posProb;
+            selectBase = selectBase.Remove(posProb, k);
+            select = select.Remove(posProb, k);
             rtbSelect.Text = select;
         }
     }

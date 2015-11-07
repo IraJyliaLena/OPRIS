@@ -48,14 +48,15 @@
             this.btnAddZnach = new System.Windows.Forms.Button();
             this.moreEqual = new System.Windows.Forms.Button();
             this.lessEqual = new System.Windows.Forms.Button();
+            this.butCansel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btOk
             // 
-            this.btOk.Location = new System.Drawing.Point(503, 108);
+            this.btOk.Location = new System.Drawing.Point(493, 144);
             this.btOk.Name = "btOk";
-            this.btOk.Size = new System.Drawing.Size(128, 27);
+            this.btOk.Size = new System.Drawing.Size(283, 27);
             this.btOk.TabIndex = 35;
             this.btOk.Text = "Применить";
             this.btOk.UseVisualStyleBackColor = true;
@@ -259,11 +260,22 @@
             this.lessEqual.UseVisualStyleBackColor = true;
             this.lessEqual.Click += new System.EventHandler(this.lessEqual_Click);
             // 
+            // butCansel
+            // 
+            this.butCansel.Location = new System.Drawing.Point(493, 108);
+            this.butCansel.Name = "butCansel";
+            this.butCansel.Size = new System.Drawing.Size(128, 27);
+            this.butCansel.TabIndex = 42;
+            this.butCansel.Text = "<-- Отмена";
+            this.butCansel.UseVisualStyleBackColor = true;
+            this.butCansel.Click += new System.EventHandler(this.butCansel_Click);
+            // 
             // frmSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 440);
+            this.Controls.Add(this.butCansel);
             this.Controls.Add(this.lessEqual);
             this.Controls.Add(this.moreEqual);
             this.Controls.Add(this.btnAddZnach);
@@ -316,5 +328,6 @@
         private System.Windows.Forms.Button btnAddZnach;
         private System.Windows.Forms.Button moreEqual;
         private System.Windows.Forms.Button lessEqual;
+        private System.Windows.Forms.Button butCansel;
     }
 }

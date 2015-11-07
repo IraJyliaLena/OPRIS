@@ -22,11 +22,6 @@ namespace PetShop
             InitializeComponent();
             myConnection = con;
             dgvP = d;
-            SqlDataAdapter da = new SqlDataAdapter("select city_name from Cities Order by city_name", myConnection);
-            DataTable tbl=new DataTable();
-            da.Fill(tbl);
-            cbCity.DataSource = tbl;
-            cbCity.DisplayMember = "city_name";
             switch (fun)
             {
                 case "add": 
@@ -40,13 +35,11 @@ namespace PetShop
 
         private void fillCityBox()
         {
-            //string commandText = "GET_CITY_LIST";
-            //DbCommand myCommand = DbLog.CreateCommand(commandText, myConnection);
-            //DbDataReader reader = DbLog.ExecuteReader(myCommand);
-            //while (reader.Read())
-            //    cbCity.Items.Add(reader.GetString(0));
-            //reader.Close();
-            //cbCity.SelectedIndex = 0;
+            SqlDataAdapter da = new SqlDataAdapter("select city_name from Cities Order by city_name", myConnection);
+            DataTable tbl = new DataTable();
+            da.Fill(tbl);
+            cbCity.DataSource = tbl;
+            cbCity.DisplayMember = "city_name";
         }
 
         private void fillTheTable(DataGridView dgv, string commandText)
@@ -58,6 +51,13 @@ namespace PetShop
             BindingSource bs = new BindingSource();
             bs.DataSource = dt;
             dgv.DataSource = bs;
+
+            //DataTable dt = DbLog.ExecCommand(myCommand);
+            ////DbDataAdapter da = DbLog.CreateAdapter(myCommand);
+            ////da.Fill(dt);
+            //BindingSource bs = new BindingSource();
+            //bs.DataSource = dt;
+            //dgvResult.DataSource = bs;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace PetShop
                 sqlCmd.ExecuteNonQuery();
             }
             this.Hide();
-            fillTheTable(dgvP, "DISPLAY_PROVIDER");
+            //fillTheTable(dgvP, "DISPLAY_PROVIDER");
         }
     }
 }
