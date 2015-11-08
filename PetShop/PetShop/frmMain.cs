@@ -42,7 +42,7 @@ namespace PetShop
             }
             catch
             { /*что-то тут надо написать*/ }
-            switch (p.Value.ToString())
+            switch (n.Value.ToString())
             {
                 case "директор":
                     break;

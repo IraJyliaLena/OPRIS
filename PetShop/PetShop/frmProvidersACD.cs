@@ -14,14 +14,18 @@ namespace PetShop
 {
     public partial class frmProvidersACD : Form
     {
-        private SqlConnection myConnection;
+        private SqlConnection myConnection, con2;
         private DataSet myDS = new DataSet();
         private DataGridView dgvP;
-        public frmProvidersACD(SqlConnection con, string fun, DataGridView d)
+        private int count;
+        public frmProvidersACD(SqlConnection con, string fun, DataGridView d, int c)
         {
             InitializeComponent();
             myConnection = con;
+            count = c;
+            con2 = con;
             dgvP = d;
+            fillCityBox();
             switch (fun)
             {
                 case "add": 
@@ -35,6 +39,19 @@ namespace PetShop
 
         private void fillCityBox()
         {
+            //if (count != 0)
+            //{
+            //    string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
+            //    myConnection = new SqlConnection(connectionString);
+            //    try
+            //    {
+            //        myConnection.Open();
+            //    }
+            //    catch (SqlException ex)
+            //    {
+            //        MessageBox.Show(ex.Message);;
+            //    }
+            //}
             SqlDataAdapter da = new SqlDataAdapter("select city_name from Cities Order by city_name", myConnection);
             DataTable tbl = new DataTable();
             da.Fill(tbl);
@@ -73,7 +90,17 @@ namespace PetShop
                 sqlCmd.ExecuteNonQuery();
             }
             this.Hide();
-            //fillTheTable(dgvP, "DISPLAY_PROVIDER");
+            string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
+            myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message); ;
+            }
+            fillTheTable(dgvP, "DISPLAY_PROVIDER");
         }
     }
 }

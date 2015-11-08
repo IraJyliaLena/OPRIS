@@ -168,6 +168,7 @@
             this.lbFilds.Name = "lbFilds";
             this.lbFilds.Size = new System.Drawing.Size(165, 100);
             this.lbFilds.TabIndex = 24;
+            this.lbFilds.SelectedIndexChanged += new System.EventHandler(this.lbFilds_SelectedIndexChanged);
             // 
             // label1
             // 
