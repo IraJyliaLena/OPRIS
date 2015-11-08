@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProvidersACD));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,17 +39,19 @@
             this.txtAccount = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.butAddNext = new System.Windows.Forms.Button();
+            this.butAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(201, 147);
+            this.btnCancel.Location = new System.Drawing.Point(242, 147);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(71, 23);
             this.btnCancel.TabIndex = 24;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -98,6 +101,7 @@
             // 
             // cbCity
             // 
+            this.cbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCity.FormattingEnabled = true;
             this.cbCity.Location = new System.Drawing.Point(111, 111);
             this.cbCity.Name = "cbCity";
@@ -108,38 +112,51 @@
             // 
             this.txtAccount.Location = new System.Drawing.Point(111, 78);
             this.txtAccount.Name = "txtAccount";
-            this.txtAccount.Size = new System.Drawing.Size(166, 20);
+            this.txtAccount.Size = new System.Drawing.Size(202, 20);
             this.txtAccount.TabIndex = 20;
             // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(111, 43);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(166, 20);
+            this.txtPhone.Size = new System.Drawing.Size(202, 20);
             this.txtPhone.TabIndex = 19;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(111, 10);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(166, 20);
+            this.txtName.Size = new System.Drawing.Size(202, 20);
             this.txtName.TabIndex = 18;
             // 
-            // button1
+            // butAddNext
             // 
-            this.button1.Location = new System.Drawing.Point(90, 147);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Добавить ещё";
-            this.button1.UseVisualStyleBackColor = true;
+            this.butAddNext.Location = new System.Drawing.Point(90, 147);
+            this.butAddNext.Name = "butAddNext";
+            this.butAddNext.Size = new System.Drawing.Size(105, 23);
+            this.butAddNext.TabIndex = 28;
+            this.butAddNext.Text = "Добавить ещё";
+            this.butAddNext.UseVisualStyleBackColor = true;
+            this.butAddNext.Click += new System.EventHandler(this.butAddNext_Click);
+            // 
+            // butAdd
+            // 
+            this.butAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butAdd.BackgroundImage")));
+            this.butAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butAdd.Location = new System.Drawing.Point(283, 111);
+            this.butAdd.Name = "butAdd";
+            this.butAdd.Size = new System.Drawing.Size(30, 23);
+            this.butAdd.TabIndex = 29;
+            this.butAdd.UseVisualStyleBackColor = true;
+            this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
             // 
             // frmProvidersACD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 182);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(325, 182);
+            this.Controls.Add(this.butAdd);
+            this.Controls.Add(this.butAddNext);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label4);
@@ -152,6 +169,7 @@
             this.Controls.Add(this.txtName);
             this.Name = "frmProvidersACD";
             this.Text = "frmProvidersACD";
+            this.Load += new System.EventHandler(this.frmProvidersACD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,6 +187,7 @@
         private System.Windows.Forms.TextBox txtAccount;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button butAddNext;
+        private System.Windows.Forms.Button butAdd;
     }
 }
