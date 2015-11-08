@@ -63,6 +63,10 @@ namespace PetShop
                 }
         }
 
+        /// <summary>
+        /// Получить сведения о пользователе
+        /// </summary>
+        /// <returns></returns>
         private String get_user_info()
         {
             string commandText = "INIT_USER";

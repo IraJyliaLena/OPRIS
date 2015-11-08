@@ -21,10 +21,14 @@ namespace PetShop
             InitializeComponent();
             myConnection = con;
             this.Text += " (" + user_name + ")";
-            getPrivileges(user_role);//отобразить содержимое MainForm в соответствии с ролью
+            getPrivileges(user_role);
             fillTheTable(dgvPets, "DISPLAY_PETS");
         }
 
+        /// <summary>
+        /// Отобразить содержимое MainForm в соответствии с ролью
+        /// </summary>
+        /// <param name="role"></param>
         private void getPrivileges(String role)
         {
             switch (role)
