@@ -21,7 +21,7 @@ namespace PetShop
             InitializeComponent();
             myConnection = con;
             this.Text += " (" + user_name + ")";
-            getPrivileges(user_role);
+            getPrivileges(user_role);//отобразить содержимое MainForm в соответствии с ролью
             fillTheTable(dgvPets, "DISPLAY_PETS");
         }
 
