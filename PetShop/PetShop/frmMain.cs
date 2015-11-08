@@ -54,6 +54,16 @@ namespace PetShop
 
         private void fillTheTable(DataGridView dgv, string commandText)
         {
+            string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
+            myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message); ;
+            }
             SqlCommand comm = new SqlCommand(commandText, myConnection);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(comm);
@@ -95,18 +105,18 @@ namespace PetShop
             this.Owner.Show();
         }
 
-        private void новыйЗапросToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void поставщикиToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmProviders prov = new frmProviders(myConnection, dgvProvider);
+            this.Hide();
+            prov.Show(this);
+        }
+
+        private void подобратьЖивотноеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSelect sel = new frmSelect(myConnection);
             this.Hide();
             sel.Show(this);
-        }
-
-        private void поставщикиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmProviders prov = new frmProviders(myConnection);
-            this.Hide();
-            prov.Show(this);
         }
     }
 }

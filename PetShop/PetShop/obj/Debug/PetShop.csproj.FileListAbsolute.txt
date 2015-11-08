@@ -12,3 +12,19 @@ C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Р�
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.Cache
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.exe
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.pdb
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\bin\Debug\PetShop.exe.config
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.exe
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.pdb
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\bin\Debug\PetShop.exe
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\bin\Debug\PetShop.pdb
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.csprojResolveAssemblyReference.cache
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmLogin.resources
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmMain.resources
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmProviders.resources
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmProvidersACD.resources
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmSelect.resources
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.Cache
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmAddCity.resources

@@ -38,10 +38,15 @@
             // 
             // dgvProviders
             // 
+            this.dgvProviders.AllowUserToAddRows = false;
+            this.dgvProviders.AllowUserToDeleteRows = false;
             this.dgvProviders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProviders.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvProviders.Location = new System.Drawing.Point(0, 0);
+            this.dgvProviders.MultiSelect = false;
             this.dgvProviders.Name = "dgvProviders";
+            this.dgvProviders.ReadOnly = true;
+            this.dgvProviders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProviders.Size = new System.Drawing.Size(548, 271);
             this.dgvProviders.TabIndex = 1;
             // 
@@ -63,6 +68,7 @@
             this.butClose.TabIndex = 3;
             this.butClose.Text = "Закрыть";
             this.butClose.UseVisualStyleBackColor = true;
+            this.butClose.Click += new System.EventHandler(this.butClose_Click);
             // 
             // butDel
             // 
@@ -72,6 +78,7 @@
             this.butDel.TabIndex = 4;
             this.butDel.Text = "Удалить";
             this.butDel.UseVisualStyleBackColor = true;
+            this.butDel.Click += new System.EventHandler(this.butDel_Click);
             // 
             // butChange
             // 

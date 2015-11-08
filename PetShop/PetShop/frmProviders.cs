@@ -13,12 +13,23 @@ namespace PetShop
 {
     public partial class frmProviders : Form
     {
-        private int count = 0;
         private SqlConnection myConnection;
-        public frmProviders(SqlConnection con)
+        DataGridView dgvp;
+        public frmProviders(SqlConnection con, DataGridView _dgvp)
         {
             InitializeComponent();
             myConnection = con;
+            dgvp = _dgvp;
+            string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
+            myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message); ;
+            }
             fillTheTable(dgvProviders, "DISPLAY_PROVIDER");
         }
 
@@ -42,13 +53,13 @@ namespace PetShop
         {
             this.Hide();
             this.Owner.Show();
+            fillTheTable(dgvp, "DISPLAY_PROVIDER");
         }
 
         private void butAdd_Click(object sender, EventArgs e)
         {
-            frmProvidersACD prov1 = new frmProvidersACD(myConnection, "add", dgvProviders, count);
-            prov1.Show(this);
-            count++;
+            frmProvidersACD prov1 = new frmProvidersACD(myConnection, "add", dgvProviders, null);
+            prov1.ShowDialog();
             string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
             myConnection = new SqlConnection(connectionString);
             try
@@ -63,9 +74,45 @@ namespace PetShop
 
         private void butChange_Click(object sender, EventArgs e)
         {
-            frmProvidersACD prov1 = new frmProvidersACD(myConnection, "change", dgvProviders, count);
+            frmProvidersACD prov1 = new frmProvidersACD(myConnection, "change", dgvProviders, dgvProviders.SelectedCells);
             this.Hide();
-            prov1.Show(this);
+            prov1.ShowDialog(); 
+            string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
+            myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void butClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Owner.Show();
+            fillTheTable(dgvp, "DISPLAY_PROVIDER");
+        }
+
+        private void butDel_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
+            myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            var sqlCmd = new SqlCommand("delete_from_provider", myConnection);
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(dgvProviders.SelectedCells[0].Value));
+            sqlCmd.ExecuteNonQuery();
+            fillTheTable(dgvProviders, "DISPLAY_PROVIDER");
         }
     }
 }
