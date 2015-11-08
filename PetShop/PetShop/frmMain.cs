@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Common;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace PetShop
@@ -22,7 +21,7 @@ namespace PetShop
             myConnection = con;
             this.Text += " (" + user_name + ")";
             getPrivileges(user_role);
-            fillTheTable(dgvPets, "DISPLAY_PETS");
+            fillTheTable(dgvPets, "DISPLAY_UNSOLD_PETS");
         }
 
         /// <summary>
@@ -68,7 +67,7 @@ namespace PetShop
             switch (tcMain.SelectedIndex)
             {
                 case 0:
-                    fillTheTable(dgvPets, "DISPLAY_PETS");
+                    fillTheTable(dgvPets, "DISPLAY_UNSOLD_PETS");
                     break;
                 case 1:
                     fillTheTable(dgvProvider, "DISPLAY_PROVIDER_PUB");
@@ -107,6 +106,13 @@ namespace PetShop
             frmProviders prov = new frmProviders(myConnection);
             this.Hide();
             prov.Show(this);
+        }
+
+        private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStatistics stats = new frmStatistics(myConnection);
+            this.Hide();
+            stats.Show(this);
         }
     }
 }

@@ -12,3 +12,5 @@ C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Р�
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.Cache
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.exe
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.pdb
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.csprojResolveAssemblyReference.cache
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.frmStatistics.resources
