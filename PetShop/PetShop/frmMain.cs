@@ -16,17 +16,18 @@ namespace PetShop
     public partial class frmMain : Form
     {
         private SqlConnection myConnection;
-        public frmMain(SqlConnection con, String user_name)
+        public frmMain(SqlConnection con, String user_name, String user_role)
         {
             InitializeComponent();
             myConnection = con;
             this.Text += " (" + user_name + ")";
-            getPrivileges(user_name);
+            getPrivileges(user_role);
             fillTheTable(dgvPets, "DISPLAY_PETS");
         }
 
-        private void getPrivileges(String user)
+        private void getPrivileges(String role)
         {
+<<<<<<< HEAD
             string commandText = "GET_ROLE_NAME";
             SqlCommand myCommand = new SqlCommand(commandText, myConnection);
             myCommand.CommandType = CommandType.StoredProcedure;
@@ -43,6 +44,9 @@ namespace PetShop
             catch
             { /*что-то тут надо написать*/ }
             switch (n.Value.ToString())
+=======
+            switch (role)
+>>>>>>> 61e5cd95912bbea5f2b9e4301223aadcfb7064f2
             {
                 case "директор":
                     break;
@@ -52,7 +56,6 @@ namespace PetShop
                     break;
                 default:
                     break;
-
             }
         }
 

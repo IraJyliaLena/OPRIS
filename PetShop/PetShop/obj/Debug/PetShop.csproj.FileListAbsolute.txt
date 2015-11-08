@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\bin\Debug\PetShop.exe.config
 C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\bin\Debug\PetShop.exe
 C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\bin\Debug\PetShop.pdb
@@ -13,3 +14,20 @@ C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.Properties.R
 C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.Cache
 C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.exe
 C:\Users\Ирина\Desktop\OPRIS\PetShop\PetShop\obj\Debug\PetShop.pdb
+=======
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\bin\Debug\PetShop.exe.config
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\bin\Debug\PetShop.exe
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\bin\Debug\PetShop.pdb
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.csprojResolveAssemblyReference.cache
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.frmLogin.resources
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.frmMain.resources
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.frmProviders.resources
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.frmProvidersACD.resources
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.frmSelect.resources
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.Cache
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.exe
+C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.pdb
+>>>>>>> 61e5cd95912bbea5f2b9e4301223aadcfb7064f2
