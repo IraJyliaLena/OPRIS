@@ -3,7 +3,6 @@ C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Р�
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\bin\Debug\PetShop.pdb
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
-C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.csprojResolveAssemblyReference.cache
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.frmLogin.resources
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.frmMain.resources
 C:\Users\Юляха\Documents\Учеба, мехмат\4 курс\ОПРИС\Репозиторий\PetShop\PetShop\obj\Debug\PetShop.frmProviders.resources

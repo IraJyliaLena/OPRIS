@@ -63,7 +63,7 @@ namespace PetShop
 
         private void btAddField_Click(object sender, EventArgs e)
         {
-            select = select + lbFilds.Text;
+            select = select + " " + lbFilds.Text;
             rtbSelect.Text = select;
             translateField(lbFilds.Text);
         }
@@ -120,7 +120,7 @@ namespace PetShop
             if (type == "string")
                 selectBase = selectBase + " '" + tbZnach.Text.ToString() + "'";
             else selectBase = selectBase + " " + Convert.ToInt32(tbZnach.Text);
-            select = select + tbZnach.Text.ToString();
+            select = select + " " + tbZnach.Text.ToString();
             rtbSelect.Text = select;
             tbZnach.Clear();
         }
@@ -181,8 +181,18 @@ namespace PetShop
             int posProb = selectBase.LastIndexOf(' ');
             int k = lengthStr - posProb;
             selectBase = selectBase.Remove(posProb, k);
+            lengthStr = select.Length;
+            posProb = select.LastIndexOf(' ');
+            k = lengthStr - posProb;
             select = select.Remove(posProb, k);
             rtbSelect.Text = select;
+        }
+
+        private void lbFilds_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            select = select + " " + lbFilds.Text;
+            rtbSelect.Text = select;
+            translateField(lbFilds.Text);
         }
     }
 }
