@@ -42,6 +42,7 @@
             this.поставщикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.продажаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подобратьЖивотноеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvPets = new System.Windows.Forms.DataGridView();
@@ -49,7 +50,7 @@
             this.dgvProvider = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
-            this.подобратьЖивотноеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myMenu.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -119,51 +120,60 @@
             // видыToolStripMenuItem
             // 
             this.видыToolStripMenuItem.Name = "видыToolStripMenuItem";
-            this.видыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.видыToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.видыToolStripMenuItem.Text = "Виды";
             // 
             // городаToolStripMenuItem
             // 
             this.городаToolStripMenuItem.Name = "городаToolStripMenuItem";
-            this.городаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.городаToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.городаToolStripMenuItem.Text = "Города";
             // 
             // должностиToolStripMenuItem
             // 
             this.должностиToolStripMenuItem.Name = "должностиToolStripMenuItem";
-            this.должностиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.должностиToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.должностиToolStripMenuItem.Text = "Должности";
             // 
             // животныеToolStripMenuItem
             // 
             this.животныеToolStripMenuItem.Name = "животныеToolStripMenuItem";
-            this.животныеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.животныеToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.животныеToolStripMenuItem.Text = "Животные";
             // 
             // породыToolStripMenuItem
             // 
             this.породыToolStripMenuItem.Name = "породыToolStripMenuItem";
-            this.породыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.породыToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.породыToolStripMenuItem.Text = "Породы";
             // 
             // поставщикиToolStripMenuItem
             // 
             this.поставщикиToolStripMenuItem.Name = "поставщикиToolStripMenuItem";
-            this.поставщикиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.поставщикиToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.поставщикиToolStripMenuItem.Text = "Поставщики";
             this.поставщикиToolStripMenuItem.Click += new System.EventHandler(this.поставщикиToolStripMenuItem_Click_1);
             // 
             // сотрудникиToolStripMenuItem
             // 
             this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
-            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
             // 
             // продажаToolStripMenuItem
             // 
+            this.продажаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.статистикаToolStripMenuItem});
             this.продажаToolStripMenuItem.Name = "продажаToolStripMenuItem";
             this.продажаToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.продажаToolStripMenuItem.Text = "Продажа";
+            // 
+            // подобратьЖивотноеToolStripMenuItem
+            // 
+            this.подобратьЖивотноеToolStripMenuItem.Name = "подобратьЖивотноеToolStripMenuItem";
+            this.подобратьЖивотноеToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
+            this.подобратьЖивотноеToolStripMenuItem.Text = "Подобрать животное";
+            this.подобратьЖивотноеToolStripMenuItem.Click += new System.EventHandler(this.подобратьЖивотноеToolStripMenuItem_Click);
             // 
             // tcMain
             // 
@@ -252,12 +262,12 @@
             this.dgvEmployee.Size = new System.Drawing.Size(640, 237);
             this.dgvEmployee.TabIndex = 0;
             // 
-            // подобратьЖивотноеToolStripMenuItem
+            // статистикаToolStripMenuItem
             // 
-            this.подобратьЖивотноеToolStripMenuItem.Name = "подобратьЖивотноеToolStripMenuItem";
-            this.подобратьЖивотноеToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
-            this.подобратьЖивотноеToolStripMenuItem.Text = "Подобрать животное";
-            this.подобратьЖивотноеToolStripMenuItem.Click += new System.EventHandler(this.подобратьЖивотноеToolStripMenuItem_Click);
+            this.статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
+            this.статистикаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.статистикаToolStripMenuItem.Text = "Статистика";
+            this.статистикаToolStripMenuItem.Click += new System.EventHandler(this.статистикаToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -307,5 +317,6 @@
         private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem продажаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem подобратьЖивотноеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem статистикаToolStripMenuItem;
     }
 }

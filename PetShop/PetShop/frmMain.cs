@@ -118,5 +118,12 @@ namespace PetShop
             this.Hide();
             sel.Show(this);
         }
+
+        private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStatistics stats = new frmStatistics(myConnection);
+            this.Hide();
+            stats.Show(this);
+        }
     }
 }
