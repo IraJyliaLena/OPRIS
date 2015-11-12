@@ -19,9 +19,16 @@ namespace PetShop
             this.Text = title;
         }
 
+        public frmAddCity(string title, string name)
+        {
+            InitializeComponent();
+            this.Text = title;
+            tbValue.Text = name;
+        }
+
         private void frmAddCity_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void butOk_Click(object sender, EventArgs e)

@@ -46,7 +46,7 @@
             this.butOk.Name = "butOk";
             this.butOk.Size = new System.Drawing.Size(115, 23);
             this.butOk.TabIndex = 1;
-            this.butOk.Text = "Добавить";
+            this.butOk.Text = "ОК";
             this.butOk.UseVisualStyleBackColor = true;
             this.butOk.Click += new System.EventHandler(this.butOk_Click);
             // 

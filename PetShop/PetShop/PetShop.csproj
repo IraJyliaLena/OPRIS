@@ -54,6 +54,12 @@
     <Compile Include="frmAddCity.Designer.cs">
       <DependentUpon>frmAddCity.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCities.Designer.cs">
+      <DependentUpon>frmCities.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAddCity.resx">
       <DependentUpon>frmAddCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCities.resx">
+      <DependentUpon>frmCities.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

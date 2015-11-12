@@ -132,7 +132,7 @@ namespace PetShop
             selectBase = selectBaseZapas;
         }
 
-        private void GetData (string query)
+        private void GetData ()
         {
             try
             {
@@ -153,7 +153,7 @@ namespace PetShop
         {
             bindingSource = new BindingSource();
             dataGridView1.DataSource = bindingSource;
-            GetData(selectBase);
+            GetData();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

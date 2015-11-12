@@ -125,5 +125,12 @@ namespace PetShop
             this.Hide();
             stats.Show(this);
         }
+
+        private void городаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCities city = new frmCities(myConnection);
+            this.Hide();
+            city.Show(this);
+        }
     }
 }
