@@ -85,6 +85,7 @@
             this.btnPrint.TabIndex = 6;
             this.btnPrint.Text = "Печать отчета";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnAccept
             // 
