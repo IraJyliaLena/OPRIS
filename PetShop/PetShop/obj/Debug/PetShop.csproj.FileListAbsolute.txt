@@ -47,3 +47,5 @@ C:\Users\Юляха\Desktop\PetShop\PetShop\obj\Debug\PetShop.Properties.Resourc
 C:\Users\Юляха\Desktop\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.Cache
 C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmCities.resources
 C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmStatistics.resources
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmEmployeesAC.resources
+C:\Users\Ирина\Desktop\Разные документы\OPRIS\PetShop\PetShop\obj\Debug\PetShop.frmPostsAC.resources

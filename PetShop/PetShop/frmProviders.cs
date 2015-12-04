@@ -15,9 +15,10 @@ namespace PetShop
     {
         private SqlConnection myConnection;
         DataGridView dgvp;
-        public frmProviders(SqlConnection con, DataGridView _dgvp)
+        public frmProviders(SqlConnection con, DataGridView _dgvp, string title)
         {
             InitializeComponent();
+            this.Text = title;
             myConnection = con;
             dgvp = _dgvp;
             string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
@@ -30,7 +31,18 @@ namespace PetShop
             {
                 MessageBox.Show(ex.Message); ;
             }
-            fillTheTable(dgvProviders, "DISPLAY_PROVIDER");
+            switch(title)
+            {
+                case "Данные о поставщиках": 
+                    fillTheTable(dgvProviders, "DISPLAY_PROVIDER");
+                    break;
+                case "Данные о сотрудниках":
+                    fillTheTable(dgvProviders, "DISPLAY_EMPLOYEES");
+                    break;
+                case "Данные о должностях":
+                    fillTheTable(dgvProviders, "DISPLAY_POSTS");
+                    break;
+            }
         }
 
         private void fillTheTable(DataGridView dgv, string commandText)
@@ -52,14 +64,35 @@ namespace PetShop
         private void frmProviders_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
+            switch (this.Text)
+            {
+                case "Данные о поставщиках":
+                    fillTheTable(dgvp, "DISPLAY_PROVIDER");
+                    break;
+                case "Данные о сотрудниках":
+                    fillTheTable(dgvp, "DISPLAY_EMPLOYEES");
+                    break;
+            }
             this.Owner.Show();
-            fillTheTable(dgvp, "DISPLAY_PROVIDER");
         }
 
         private void butAdd_Click(object sender, EventArgs e)
         {
-            frmProvidersACD prov1 = new frmProvidersACD(myConnection, "add", dgvProviders, null);
-            prov1.ShowDialog();
+            switch(this.Text)
+            {
+                case "Данные о поставщиках":
+                    frmProvidersACD prov1 = new frmProvidersACD(myConnection, "add", dgvProviders, null);
+                    prov1.ShowDialog();
+                    break;
+                case "Данные о сотрудниках":
+                    frmEmployeesAC empl1 = new frmEmployeesAC(myConnection, "add", dgvProviders, null);
+                    empl1.ShowDialog();
+                    break;
+                case "Данные о должностях":
+                    frmPostsAC posts1 = new frmPostsAC(myConnection, "add", dgvProviders, null);
+                    posts1.ShowDialog();
+                    break;
+            }
             string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
             myConnection = new SqlConnection(connectionString);
             try
@@ -74,9 +107,21 @@ namespace PetShop
 
         private void butChange_Click(object sender, EventArgs e)
         {
-            frmProvidersACD prov1 = new frmProvidersACD(myConnection, "change", dgvProviders, dgvProviders.SelectedCells);
-            this.Hide();
-            prov1.ShowDialog(); 
+            switch (this.Text)
+            {
+                case "Данные о поставщиках":
+                    frmProvidersACD prov1 = new frmProvidersACD(myConnection, "change", dgvProviders, dgvProviders.SelectedCells);
+                    prov1.ShowDialog();
+                    break;
+                case "Данные о сотрудниках":
+                    frmEmployeesAC empl1 = new frmEmployeesAC(myConnection, "change", dgvProviders, dgvProviders.SelectedCells);
+                    empl1.ShowDialog();
+                    break;
+                case "Данные о должностях":
+                    frmPostsAC posts1 = new frmPostsAC(myConnection, "change", dgvProviders, dgvProviders.SelectedCells);
+                    posts1.ShowDialog();
+                    break;
+            }
             string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
             myConnection = new SqlConnection(connectionString);
             try
@@ -92,14 +137,21 @@ namespace PetShop
         private void butClose_Click(object sender, EventArgs e)
         {
             this.Hide();
+            switch (this.Text)
+            {
+                case "Данные о поставщиках":
+                    fillTheTable(dgvp, "DISPLAY_PROVIDER");
+                    break;
+                case "Данные о сотрудниках":
+                    fillTheTable(dgvp, "DISPLAY_EMPLOYEES");
+                    break;
+            }
             this.Owner.Show();
-            fillTheTable(dgvp, "DISPLAY_PROVIDER");
         }
 
-        int GetKolBreeds(int id)
+        int GetKol(string query)
         {
             int kol = 0;
-            string query = @"select count(provider_id) from Breeds where provider_id = '1'";
             try
             {
                 string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
@@ -110,12 +162,12 @@ namespace PetShop
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show(ex.Message); ;
+                    MessageBox.Show(ex.Message);
                 }
                 using (var cmd = myConnection.CreateCommand())
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = string.Format(query, id);
+                    cmd.CommandText = string.Format(query);
                     object value = cmd.ExecuteScalar();
                     cmd.ExecuteNonQuery();
                     kol = Convert.ToInt32(value.ToString());
@@ -131,7 +183,21 @@ namespace PetShop
 
         private void butDel_Click(object sender, EventArgs e)
         {
-            int kol = GetKolBreeds(Convert.ToInt32(dgvProviders.SelectedCells[0].Value));
+            string query = "";
+            switch (this.Text)
+            {
+                case "Данные о поставщиках":
+                    query = @"select count(provider_id) from Breeds where provider_id = ";
+                    break;
+                case "Данные о сотрудниках":
+                    query = @"select count(pet_id) from Pets where employee_id = ";
+                    break;
+                case "Данные о должностях":
+                    query = @"select count(employee_id) from employees where post_id = ";
+                    break;
+            }
+            query = query + dgvProviders.SelectedCells[0].Value.ToString();
+            int kol = GetKol(query);
             if (kol == 0)
             {
                 string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
@@ -144,12 +210,58 @@ namespace PetShop
                 {
                     MessageBox.Show(ex.Message);
                 }
-                var sqlCmd = new SqlCommand("delete_from_provider", myConnection);
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(dgvProviders.SelectedCells[0].Value));
-                sqlCmd.ExecuteNonQuery();
-                fillTheTable(dgvProviders, "DISPLAY_PROVIDER");
-            } else MessageBox.Show("Данного поставщика удалить невозможно.");            
+                string nameProc = "";
+                switch (this.Text)
+                {
+                    case "Данные о поставщиках":
+                        nameProc = "delete_from_provider";
+                        break;
+                    case "Данные о сотрудниках":
+                        nameProc = "delete_from_employee";
+                        break;
+                    case "Данные о должностях":
+                        nameProc = "delete_from_posts";
+                        break;
+                }
+                var sqlCmd = new SqlCommand(nameProc, myConnection);
+                switch (this.Text)
+                {
+                    case "Данные о поставщиках":
+                        sqlCmd.CommandType = CommandType.StoredProcedure;
+                        sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(dgvProviders.SelectedCells[0].Value));
+                        sqlCmd.ExecuteNonQuery();
+                        fillTheTable(dgvProviders, "DISPLAY_PROVIDER");
+                        break;
+                    case "Данные о сотрудниках":
+                        sqlCmd.CommandType = CommandType.StoredProcedure;
+                        sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(dgvProviders.SelectedCells[0].Value));
+                        sqlCmd.ExecuteNonQuery();
+                        fillTheTable(dgvProviders, "DISPLAY_EMPLOYEES");
+                        break;
+                    case "Данные о должностях":
+                        sqlCmd.CommandType = CommandType.StoredProcedure;
+                        sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(dgvProviders.SelectedCells[0].Value));
+                        sqlCmd.ExecuteNonQuery();
+                        fillTheTable(dgvProviders, "DISPLAY_POSTS");
+                        break;
+                }
+
+            }
+            else
+            {
+                switch (this.Text)
+                {
+                    case "Данные о поставщиках":
+                        MessageBox.Show("Данного поставщика удалить невозможно.");
+                        break;
+                    case "Данные о сотрудниках":
+                        MessageBox.Show("Данного сотрудника удалить невозможно.");
+                        break;
+                    case "Данные о должностях":
+                        MessageBox.Show("Данную должность удалить невозможно.");
+                        break;
+                }
+            }
         }
     }
 }

@@ -108,11 +108,11 @@
             this.работаСДаннымиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.видыToolStripMenuItem,
             this.городаToolStripMenuItem,
-            this.должностиToolStripMenuItem,
             this.животныеToolStripMenuItem,
             this.породыToolStripMenuItem,
             this.поставщикиToolStripMenuItem,
-            this.сотрудникиToolStripMenuItem});
+            this.сотрудникиToolStripMenuItem,
+            this.должностиToolStripMenuItem});
             this.работаСДаннымиToolStripMenuItem.Name = "работаСДаннымиToolStripMenuItem";
             this.работаСДаннымиToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
             this.работаСДаннымиToolStripMenuItem.Text = "Работа с данными";
@@ -135,6 +135,7 @@
             this.должностиToolStripMenuItem.Name = "должностиToolStripMenuItem";
             this.должностиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.должностиToolStripMenuItem.Text = "Должности";
+            this.должностиToolStripMenuItem.Click += new System.EventHandler(this.должностиToolStripMenuItem_Click);
             // 
             // животныеToolStripMenuItem
             // 
@@ -160,6 +161,7 @@
             this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
             this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
+            this.сотрудникиToolStripMenuItem.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
             // 
             // продажаToolStripMenuItem
             // 

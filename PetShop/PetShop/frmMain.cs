@@ -107,7 +107,7 @@ namespace PetShop
 
         private void поставщикиToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            frmProviders prov = new frmProviders(myConnection, dgvProvider);
+            frmProviders prov = new frmProviders(myConnection, dgvProvider, "Данные о поставщиках");
             this.Hide();
             prov.Show(this);
         }
@@ -131,6 +131,20 @@ namespace PetShop
             frmCities city = new frmCities(myConnection);
             this.Hide();
             city.Show(this);
+        }
+
+        private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProviders prov = new frmProviders(myConnection, dgvEmployee,"Данные о сотрудниках");
+            this.Hide();
+            prov.Show(this);
+        }
+
+        private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProviders prov = new frmProviders(myConnection, null, "Данные о должностях");
+            this.Hide();
+            prov.Show(this);
         }
     }
 }
