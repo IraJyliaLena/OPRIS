@@ -70,7 +70,7 @@ namespace PetShop
                 using (var cmd = myConnection.CreateCommand())
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = string.Format(query1,name);
+                    cmd.CommandText = string.Format(query1, name);
                     object value = cmd.ExecuteScalar();
                     cmd.ExecuteNonQuery();
                     kol = Convert.ToInt32(value.ToString());
@@ -91,7 +91,7 @@ namespace PetShop
             {
                 salary = Convert.ToInt32(txtSalary.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Некорректная заработная плата!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtSalary.Focus();
@@ -147,6 +147,42 @@ namespace PetShop
                 txtSalary.Text = selcells[2].Value.ToString();
                 txtName.Focus();
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void frmPostsAC_Load_1(object sender, EventArgs e)
+        {
+            if (selcells != null)
+            {
+                txtName.Text = selcells[1].Value.ToString();
+                txtSalary.Text = selcells[2].Value.ToString();
+                txtName.Focus();
+            }
+
         }
     }
 }

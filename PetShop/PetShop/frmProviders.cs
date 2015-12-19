@@ -31,9 +31,9 @@ namespace PetShop
             {
                 MessageBox.Show(ex.Message); ;
             }
-            switch(title)
+            switch (title)
             {
-                case "Данные о поставщиках": 
+                case "Данные о поставщиках":
                     fillTheTable(dgvProviders, "DISPLAY_PROVIDER");
                     break;
                 case "Данные о сотрудниках":
@@ -42,6 +42,9 @@ namespace PetShop
                 case "Данные о должностях":
                     fillTheTable(dgvProviders, "DISPLAY_POSTS");
                     break;
+                case "Данные о животных":
+                    fillTheTable(dgvProviders, "DISPLAY_UNSOLD_PETS");
+                    break;                    
             }
         }
 
@@ -72,13 +75,16 @@ namespace PetShop
                 case "Данные о сотрудниках":
                     fillTheTable(dgvp, "DISPLAY_EMPLOYEES");
                     break;
+                case "Данные о животных":
+                    fillTheTable(dgvp, "DISPLAY_UNSOLD_PETS");
+                    break;
             }
             this.Owner.Show();
         }
 
         private void butAdd_Click(object sender, EventArgs e)
         {
-            switch(this.Text)
+            switch (this.Text)
             {
                 case "Данные о поставщиках":
                     frmProvidersACD prov1 = new frmProvidersACD(myConnection, "add", dgvProviders, null);
@@ -91,6 +97,10 @@ namespace PetShop
                 case "Данные о должностях":
                     frmPostsAC posts1 = new frmPostsAC(myConnection, "add", dgvProviders, null);
                     posts1.ShowDialog();
+                    break;
+                case "Данные о животных":
+                    frmPets pets = new frmPets(myConnection, "add", dgvProviders, null);
+                    pets.ShowDialog();
                     break;
             }
             string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
@@ -121,6 +131,10 @@ namespace PetShop
                     frmPostsAC posts1 = new frmPostsAC(myConnection, "change", dgvProviders, dgvProviders.SelectedCells);
                     posts1.ShowDialog();
                     break;
+                case "Данные о животных":
+                    frmPets pets1 = new frmPets(myConnection, "change", dgvProviders, dgvProviders.SelectedCells);
+                    pets1.ShowDialog();
+                    break;
             }
             string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
             myConnection = new SqlConnection(connectionString);
@@ -144,6 +158,9 @@ namespace PetShop
                     break;
                 case "Данные о сотрудниках":
                     fillTheTable(dgvp, "DISPLAY_EMPLOYEES");
+                    break;
+                case "Данные о животных":
+                    fillTheTable(dgvp, "DISPLAY_UNSOLD_PETS");
                     break;
             }
             this.Owner.Show();
@@ -190,9 +207,12 @@ namespace PetShop
                     query = @"select count(provider_id) from Breeds where provider_id = ";
                     break;
                 case "Данные о сотрудниках":
-                    query = @"select count(pet_id) from Pets where employee_id = ";
+                    query = @"select count(pet_id) from Pets where pet_id = ";
                     break;
                 case "Данные о должностях":
+                    query = @"select count(employee_id) from employees where post_id = ";
+                    break;
+                case "Данные о животных":
                     query = @"select count(employee_id) from employees where post_id = ";
                     break;
             }
@@ -222,6 +242,9 @@ namespace PetShop
                     case "Данные о должностях":
                         nameProc = "delete_from_posts";
                         break;
+                    case "Данные о животных":
+                        nameProc = "delete_from_pets";
+                        break;
                 }
                 var sqlCmd = new SqlCommand(nameProc, myConnection);
                 switch (this.Text)
@@ -244,6 +267,12 @@ namespace PetShop
                         sqlCmd.ExecuteNonQuery();
                         fillTheTable(dgvProviders, "DISPLAY_POSTS");
                         break;
+                    case "Данные о животных":
+                        sqlCmd.CommandType = CommandType.StoredProcedure;
+                        sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(dgvProviders.SelectedCells[0].Value));
+                        sqlCmd.ExecuteNonQuery();
+                        fillTheTable(dgvProviders, "DISPLAY_UNSOLD_PETS");
+                        break;
                 }
 
             }
@@ -260,8 +289,16 @@ namespace PetShop
                     case "Данные о должностях":
                         MessageBox.Show("Данную должность удалить невозможно.");
                         break;
+                    case "Данные о животные":
+                        MessageBox.Show("Данное животное удалить невозможно.");
+                        break;
                 }
             }
+        }
+
+        private void dgvProviders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

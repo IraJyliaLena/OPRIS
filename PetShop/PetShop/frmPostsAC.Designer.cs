@@ -38,20 +38,20 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(196, 76);
+            this.btnCancel.Location = new System.Drawing.Point(195, 82);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 23);
-            this.btnCancel.TabIndex = 36;
+            this.btnCancel.TabIndex = 42;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(15, 76);
+            this.btnOK.Location = new System.Drawing.Point(14, 82);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(118, 23);
-            this.btnOK.TabIndex = 34;
+            this.btnOK.TabIndex = 40;
             this.btnOK.Text = "ОК";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -59,40 +59,40 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 42);
+            this.label2.Location = new System.Drawing.Point(5, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 13);
-            this.label2.TabIndex = 37;
+            this.label2.TabIndex = 43;
             this.label2.Text = "Заработная плата:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 9);
+            this.label1.Location = new System.Drawing.Point(47, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 35;
+            this.label1.TabIndex = 41;
             this.label1.Text = "Название:";
             // 
             // txtSalary
             // 
-            this.txtSalary.Location = new System.Drawing.Point(114, 39);
+            this.txtSalary.Location = new System.Drawing.Point(113, 45);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(202, 20);
-            this.txtSalary.TabIndex = 31;
+            this.txtSalary.TabIndex = 39;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(114, 6);
+            this.txtName.Location = new System.Drawing.Point(113, 12);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(202, 20);
-            this.txtName.TabIndex = 30;
+            this.txtName.TabIndex = 38;
             // 
             // frmPostsAC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 109);
+            this.ClientSize = new System.Drawing.Size(323, 119);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label2);
@@ -101,7 +101,7 @@
             this.Controls.Add(this.txtName);
             this.Name = "frmPostsAC";
             this.Text = "frmPostsAC";
-            this.Load += new System.EventHandler(this.frmPostsAC_Load);
+            this.Load += new System.EventHandler(this.frmPostsAC_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

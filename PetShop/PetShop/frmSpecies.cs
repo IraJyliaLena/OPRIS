@@ -11,59 +11,24 @@ using System.Windows.Forms;
 
 namespace PetShop
 {
-    public partial class frmCities : Form
+    public partial class frmSpecies : Form
     {
         SqlDataAdapter dataAdapter;
         SqlCommandBuilder commandBuilder;
         BindingSource bindingSource;
         DataTable table;
         private SqlConnection myConnection;
-        public frmCities(SqlConnection con)
+        public frmSpecies(SqlConnection con)
         {
             InitializeComponent();
             myConnection = con;
             GetData();
         }
 
-        private void GetData()
-        {
-            bindingSource = new BindingSource();
-            dgvCities.DataSource = bindingSource;
-            try
-            {
-                dataAdapter = new SqlDataAdapter("select city_id AS 'Номер', city_name AS 'Город' from Cities", myConnection);
-                commandBuilder = new SqlCommandBuilder(dataAdapter);
-                table = new DataTable();
-                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                dataAdapter.Fill(table);
-                bindingSource.DataSource = table;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при заполнении таблицы!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void butCansel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            this.Owner.Show();
-        }
-
-        private void frmCities_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Owner.Show();
-        }
-
         private int Get_kol(string name)
         {
             int kol = 0;
-            string query = "select count(city_id) from Cities where city_name = '{0}'";
+            string query = "select count(species_id) from Species where species_name = '{0}'";
             try
             {
                 string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
@@ -100,7 +65,7 @@ namespace PetShop
                 int kol = Get_kol(tbName.Text);
                 if (kol > 0)
                 {
-                    MessageBox.Show("Такое значение в списке городов уже есть!");
+                    MessageBox.Show("Такое значение в списке видов уже есть!");
                     tbName.Focus();
                     return;
                 }
@@ -116,7 +81,7 @@ namespace PetShop
                     {
                         MessageBox.Show(ex.Message); ;
                     }
-                    var sqlCmd = new SqlCommand("insert_into_cities", myConnection);
+                    var sqlCmd = new SqlCommand("insert_into_species", myConnection);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
                     sqlCmd.Parameters.AddWithValue("@name", tbName.Text);
                     sqlCmd.ExecuteNonQuery();
@@ -136,53 +101,40 @@ namespace PetShop
             }            
         }
 
-        private void butChange_Click(object sender, EventArgs e)
+        private void GetData()
         {
-            frmAddCity changeCity = new frmAddCity("Изменить город", dgvCities.SelectedCells[1].Value.ToString());
-            int id = Convert.ToInt32(dgvCities.SelectedCells[0].Value);
-            changeCity.ShowDialog();
-            string name = changeCity.value;
-            if(name != "")
+            bindingSource = new BindingSource();
+            dgvSpecies.DataSource = bindingSource;
+            try
             {
-                if (Get_kol(name) != 0)
-                {
-                    MessageBox.Show("Такое значение в списке городов уже есть!");
-                    return;
-                }
-                else
-                {
-                    try
-                    {
-                        string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
-                        myConnection = new SqlConnection(connectionString);
-                        try
-                        {
-                            myConnection.Open();
-                        }
-                        catch (SqlException ex)
-                        {
-                            MessageBox.Show(ex.Message); ;
-                        }
-                        using (var cmd = myConnection.CreateCommand())
-                        {
-                            cmd.CommandType = CommandType.Text;
-                            cmd.CommandText = string.Format("update Cities set city_name = '{0}' where city_id = '{1}'", name, id);
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                GetData();
+                dataAdapter = new SqlDataAdapter("select species_id AS 'Номер', species_name AS 'Вид' from species", myConnection);
+                commandBuilder = new SqlCommandBuilder(dataAdapter);
+                table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table);
+                bindingSource.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при заполнении таблицы!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
-        int GetKolProviders(int id)
+        private void butCansel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Owner.Show();
+        }
+
+        private void frmSpecies_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Owner.Show();
+        }
+
+        int GetKolBreed(int id)
         {
             int kol = 0;
-            string query = @"select count(provider_id) from Providers where city_id = '{0}'";
+            string query = @"select count(breed_id) from Breeds where species_id = '{0}'";
             try
             {
                 string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
@@ -214,7 +166,7 @@ namespace PetShop
 
         private void butDel_Click(object sender, EventArgs e)
         {
-            int kol = GetKolProviders(Convert.ToInt32(dgvCities.SelectedCells[0].Value));
+            int kol = GetKolBreed(Convert.ToInt32(dgvSpecies.SelectedCells[0].Value));
             if (kol == 0)
             {
                 try
@@ -232,7 +184,7 @@ namespace PetShop
                     using (var cmd = myConnection.CreateCommand())
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = string.Format("delete from Cities where city_id = '{0}'",Convert.ToInt32(dgvCities.SelectedCells[0].Value));
+                        cmd.CommandText = string.Format("delete from Species where species_id = '{0}'", Convert.ToInt32(dgvSpecies.SelectedCells[0].Value));
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -242,12 +194,51 @@ namespace PetShop
                 }
                 GetData();
             }
-            else MessageBox.Show("Данный город удалить невозможно!");       
+            else MessageBox.Show("Данный вид удалить невозможно!");
         }
 
-        private void frmCities_Load(object sender, EventArgs e)
+        private void butChange_Click(object sender, EventArgs e)
         {
-
+            frmAddSpec changeSpec = new frmAddSpec("Изменить вид", dgvSpecies.SelectedCells[1].Value.ToString());
+            int id = Convert.ToInt32(dgvSpecies.SelectedCells[0].Value);
+            changeSpec.ShowDialog();
+            string name = changeSpec.value;
+            if (name != "")
+            {
+                if (Get_kol(name) != 0)
+                {
+                    MessageBox.Show("Такое значение в списке видов уже есть!");
+                    return;
+                }
+                else
+                {
+                    try
+                    {
+                        string connectionString = @"Data Source=.;Initial Catalog=PetShopO;user id=sa; password=1;";
+                        myConnection = new SqlConnection(connectionString);
+                        try
+                        {
+                            myConnection.Open();
+                        }
+                        catch (SqlException ex)
+                        {
+                            MessageBox.Show(ex.Message); ;
+                        }
+                        using (var cmd = myConnection.CreateCommand())
+                        {
+                            cmd.CommandType = CommandType.Text;
+                            cmd.CommandText = string.Format("update Species set species_name = '{0}' where species_id = '{1}'", name, id);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                GetData();
+            }
         }
+
     }
 }

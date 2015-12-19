@@ -125,6 +125,7 @@
             this.Name = "frmCities";
             this.Text = "Города";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCities_FormClosed);
+            this.Load += new System.EventHandler(this.frmCities_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCities)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -18,14 +18,18 @@ namespace PetShop
         BindingSource bindingSource;
         DataTable table;
         string select = "";
-        string selectBase = "select distinct pet_id as '№', pet_name as 'Кличка', pet_sex as 'Пол', pet_birthday as 'Дата рождения', breed_name as 'Порода', species_name as 'Вид', provider_name as 'Поставщик', pet_price as 'Цена' from Pets, Breeds, Species, Providers where Breeds.breed_id = Pets.breed_id and Species.species_id = Breeds.species_id and Providers.provider_id = Breeds.provider_id and";
-        string selectBaseZapas = "select pet_id as '№', pet_name as 'Кличка', pet_sex as 'Пол', pet_birthday as 'Дата рождения', breed_name as 'Порода', species_name as 'Вид', provider_name as 'Поставщик', pet_price as 'Цена' from Pets, Breeds, Species, Providers where Breeds.breed_id = Pets.breed_id and Species.species_id = Breeds.species_id and Providers.provider_id = Breeds.provider_id and";
+        string selectBase = "select pet_id as '№', pet_name as 'Кличка', pet_sex as 'Пол', pet_birthday as 'Дата рождения', breed_name as 'Порода', species_name as 'Вид', provider_name as 'Поставщик', pet_price as 'Цена', pet_image as 'Фото' from Pets, Breeds, Species, Providers where Breeds.breed_id = Pets.breed_id and Species.species_id = Breeds.species_id and Providers.provider_id = Breeds.provider_id and";
+        string selectBaseZapas = "select pet_id as '№', pet_name as 'Кличка', pet_sex as 'Пол', pet_birthday as 'Дата рождения', breed_name as 'Порода', species_name as 'Вид', provider_name as 'Поставщик', pet_price as 'Цена', pet_image as 'Фото' from Pets, Breeds, Species, Providers where Breeds.breed_id = Pets.breed_id and Species.species_id = Breeds.species_id and Providers.provider_id = Breeds.provider_id and";
         string type = "";
         private SqlConnection myConnection;
-        public frmSelect(SqlConnection con)
+        private String User_Name;
+        DataGridView dgvp;
+        public frmSelect(SqlConnection con, String un, DataGridView _dgvp)
         {
             InitializeComponent();
             myConnection = con;
+            User_Name = un;
+            dgvp = _dgvp;
         }
 
         private void translateField(string txt)
@@ -151,9 +155,14 @@ namespace PetShop
 
         private void btOk_Click(object sender, EventArgs e)
         {
+            selectBase = selectBase + " AND (ISNULL(pet_saledate, '01.01.01') = '01.01.01')";
             bindingSource = new BindingSource();
             dataGridView1.DataSource = bindingSource;
             GetData();
+            int lengthStr = selectBase.Length;
+            int k = 52;
+            int posProb = lengthStr - k;
+            selectBase = selectBase.Remove(posProb, k);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -177,15 +186,18 @@ namespace PetShop
 
         private void butCansel_Click(object sender, EventArgs e)
         {
-            int lengthStr = selectBase.Length;
-            int posProb = selectBase.LastIndexOf(' ');
-            int k = lengthStr - posProb;
-            selectBase = selectBase.Remove(posProb, k);
-            lengthStr = select.Length;
-            posProb = select.LastIndexOf(' ');
-            k = lengthStr - posProb;
-            select = select.Remove(posProb, k);
-            rtbSelect.Text = select;
+            if(rtbSelect.Text != "")
+            {
+                int lengthStr = selectBase.Length;
+                int posProb = selectBase.LastIndexOf(' ');
+                int k = lengthStr - posProb;
+                selectBase = selectBase.Remove(posProb, k);
+                lengthStr = select.Length;
+                posProb = select.LastIndexOf(' ');
+                k = lengthStr - posProb;
+                select = select.Remove(posProb, k);
+                rtbSelect.Text = select;
+            }
         }
 
         private void lbFilds_SelectedIndexChanged(object sender, EventArgs e)
@@ -193,6 +205,13 @@ namespace PetShop
             select = select + " " + lbFilds.Text;
             rtbSelect.Text = select;
             translateField(lbFilds.Text);
+        }
+
+        private void btShop_Click(object sender, EventArgs e)
+        {
+            frmSale sale = new frmSale(myConnection, User_Name, dgvp);
+            this.Hide();
+            sale.Show(this);
         }
     }
 }

@@ -16,13 +16,15 @@ namespace PetShop
     public partial class frmMain : Form
     {
         private SqlConnection myConnection;
+        private String User_Name;
         public frmMain(SqlConnection con, String user_name, String user_role)
         {
             InitializeComponent();
             myConnection = con;
             this.Text += " (" + user_name + ")";
             getPrivileges(user_role);
-            fillTheTable(dgvPets, "DISPLAY_PETS");
+            fillTheTable(dgvPets, "DISPLAY_UNSOLD_PETS");
+            User_Name = user_name;
         }
 
         /// <summary>
@@ -34,10 +36,16 @@ namespace PetShop
             switch (role)
             {
                 case "директор":
+                    статистикаПоПродажамToolStripMenuItem.Visible = false;
+                    продажаToolStripMenuItem.Visible = false;
                     break;
                 case "СОП":
+                    работаСДаннымиToolStripMenuItem.Visible = false;
+                    продажаToolStripMenuItem.Visible = false;
                     break;
                 case "продавец":
+                    работаСДаннымиToolStripMenuItem.Visible = false;
+                    статистикаПоПродажамToolStripMenuItem.Visible = false;
                     break;
                 default:
                     break;
@@ -78,7 +86,7 @@ namespace PetShop
             switch (tcMain.SelectedIndex)
             {
                 case 0:
-                    fillTheTable(dgvPets, "DISPLAY_PETS");
+                    fillTheTable(dgvPets, "DISPLAY_UNSOLD_PETS");
                     break;
                 case 1:
                     fillTheTable(dgvProvider, "DISPLAY_PROVIDER_PUB");
@@ -114,7 +122,7 @@ namespace PetShop
 
         private void подобратьЖивотноеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSelect sel = new frmSelect(myConnection);
+            frmSelect sel = new frmSelect(myConnection, User_Name,dgvPets);
             this.Hide();
             sel.Show(this);
         }
@@ -133,16 +141,51 @@ namespace PetShop
             city.Show(this);
         }
 
-        private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
+        private void продатьЖивотноеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProviders prov = new frmProviders(myConnection, dgvEmployee,"Данные о сотрудниках");
+            frmSale sale = new frmSale(myConnection, User_Name,dgvPets);
             this.Hide();
-            prov.Show(this);
+            sale.Show(this);
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void видыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSpecies spec = new frmSpecies(myConnection);
+            this.Hide();
+            spec.Show(this);
+
         }
 
         private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmProviders prov = new frmProviders(myConnection, null, "Данные о должностях");
+            this.Hide();
+            prov.Show(this);
+        }
+
+        private void животныеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProviders pet = new frmProviders(myConnection, dgvPets, "Данные о животных");
+            this.Hide();
+            pet.Show(this);
+        }
+
+        private void породыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBreeds breed = new frmBreeds(myConnection);
+            this.Hide();
+            breed.Show(this);
+
+        }
+
+        private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProviders prov = new frmProviders(myConnection, dgvEmployee, "Данные о сотрудниках");
             this.Hide();
             prov.Show(this);
         }

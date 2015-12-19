@@ -193,23 +193,25 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 205);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 190);
+            this.dataGridView1.Size = new System.Drawing.Size(937, 190);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btShop
             // 
-            this.btShop.Location = new System.Drawing.Point(606, 401);
+            this.btShop.Location = new System.Drawing.Point(743, 401);
             this.btShop.Name = "btShop";
             this.btShop.Size = new System.Drawing.Size(206, 27);
             this.btShop.TabIndex = 36;
             this.btShop.Text = "Перейти к продаже";
             this.btShop.UseVisualStyleBackColor = true;
+            this.btShop.Click += new System.EventHandler(this.btShop_Click);
             // 
             // btAddField
             // 
@@ -277,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 440);
+            this.ClientSize = new System.Drawing.Size(961, 440);
             this.Controls.Add(this.butCansel);
             this.Controls.Add(this.lessEqual);
             this.Controls.Add(this.moreEqual);
@@ -300,7 +302,7 @@
             this.Controls.Add(this.btClear);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmSelect";
-            this.Text = "frmSelect";
+            this.Text = "Подобрать животное";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSelect_FormClosed);
             this.Load += new System.EventHandler(this.frmSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

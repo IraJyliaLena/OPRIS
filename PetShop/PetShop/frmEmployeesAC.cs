@@ -114,5 +114,62 @@ namespace PetShop
             this.Hide();
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbPost_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSecondname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSurname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void frmEmployeesAC_Load_1(object sender, EventArgs e)
+        {
+            if (selcells != null)
+            {
+                txtSurname.Text = selcells[1].Value.ToString();
+                txtName.Text = selcells[2].Value.ToString();
+                txtSecondname.Text = selcells[3].Value.ToString();
+                cbPost.Text = selcells[4].Value.ToString();
+                txtSurname.Focus();
+            }
+        }
+
     }
 }

@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
       <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
@@ -53,6 +56,24 @@
     </Compile>
     <Compile Include="frmAddCity.Designer.cs">
       <DependentUpon>frmAddCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSpec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSpec.Designer.cs">
+      <DependentUpon>frmAddSpec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBreeds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBreeds.Designer.cs">
+      <DependentUpon>frmBreeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBreedsACD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBreedsACD.Designer.cs">
+      <DependentUpon>frmBreedsACD.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCities.cs">
       <SubType>Form</SubType>
@@ -78,6 +99,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPets.Designer.cs">
+      <DependentUpon>frmPets.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPostsAC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,11 +123,23 @@
     <Compile Include="frmProvidersACD.Designer.cs">
       <DependentUpon>frmProvidersACD.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSale.Designer.cs">
+      <DependentUpon>frmSale.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSelect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSelect.Designer.cs">
       <DependentUpon>frmSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSpecies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpecies.Designer.cs">
+      <DependentUpon>frmSpecies.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStatistics.cs">
       <SubType>Form</SubType>
@@ -108,10 +147,24 @@
     <Compile Include="frmStatistics.Designer.cs">
       <DependentUpon>frmStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="PetShopODataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetShopODataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAddCity.resx">
       <DependentUpon>frmAddCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSpec.resx">
+      <DependentUpon>frmAddSpec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBreeds.resx">
+      <DependentUpon>frmBreeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBreedsACD.resx">
+      <DependentUpon>frmBreedsACD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCities.resx">
       <DependentUpon>frmCities.cs</DependentUpon>
@@ -125,6 +178,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPets.resx">
+      <DependentUpon>frmPets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPostsAC.resx">
       <DependentUpon>frmPostsAC.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,8 +190,14 @@
     <EmbeddedResource Include="frmProvidersACD.resx">
       <DependentUpon>frmProvidersACD.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSale.resx">
+      <DependentUpon>frmSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSelect.resx">
       <DependentUpon>frmSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSpecies.resx">
+      <DependentUpon>frmSpecies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStatistics.resx">
       <DependentUpon>frmStatistics.cs</DependentUpon>
@@ -149,6 +211,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="PetShopODataSet.xsc">
+      <DependentUpon>PetShopODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PetShopODataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PetShopODataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PetShopODataSet.xss">
+      <DependentUpon>PetShopODataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -167,15 +240,6 @@
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
       <VersionMinor>7</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Word">
-      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>8</VersionMajor>
-      <VersionMinor>6</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
