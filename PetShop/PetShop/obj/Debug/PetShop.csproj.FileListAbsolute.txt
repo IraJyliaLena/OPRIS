@@ -228,3 +228,7 @@ C:\Users\Ирина\Desktop\Разные документы\PetShop\PetShop\obj\
 C:\Users\Ирина\Desktop\Разные документы\PetShop\PetShop\obj\Debug\PetShop.frmStatistics.resources
 C:\Users\Ирина\Desktop\Разные документы\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
 C:\Users\Ирина\Desktop\Разные документы\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.Cache
+C:\Users\Ирина\Desktop\OPRISKLON\PetShop\PetShop\bin\Debug\PetShop.exe.config
+C:\Users\Ирина\Desktop\OPRISKLON\PetShop\PetShop\obj\Debug\PetShop.csproj.ResolveComReference.cache
+C:\Users\Ирина\Desktop\OPRISKLON\PetShop\PetShop\obj\Debug\PetShop.exe
+C:\Users\Ирина\Desktop\OPRISKLON\PetShop\PetShop\obj\Debug\PetShop.pdb
